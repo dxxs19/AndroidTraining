@@ -12,6 +12,9 @@ class DataBindingActivity : AppCompatActivity() {
 
     private lateinit var user: User
     private lateinit var student: Student
+    companion object {
+        const val color = R.color.colorAccent
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +30,8 @@ class DataBindingActivity : AppCompatActivity() {
         student.age = 22
         binding.user = user
         binding.student = student
-//        setContentView(R.layout.activity_test)
 
+        binding.owner = this
         binding.setClickListener {
             onClickTv(it)
         }
