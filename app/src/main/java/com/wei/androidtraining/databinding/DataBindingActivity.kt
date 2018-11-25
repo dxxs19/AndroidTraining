@@ -1,17 +1,23 @@
 package com.wei.androidtraining.databinding
 
+import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.Observer
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import com.wei.androidtraining.R
 import com.wei.androidtraining.model.Student
+import com.wei.androidtraining.model.Teacher
 import com.wei.androidtraining.model.User
 
 class DataBindingActivity : AppCompatActivity() {
 
     private lateinit var user: User
     private lateinit var student: Student
+    private lateinit var teacher: Teacher
+
     companion object {
         const val color = R.color.colorAccent
     }
@@ -28,8 +34,20 @@ class DataBindingActivity : AppCompatActivity() {
         student.name = "abcdefg"
         student.gender = "女"
         student.age = 22
+
+        var nameLive = MutableLiveData<String>()
+        nameLive.value = "Mrs Li"
+        nameLive.observe(this, Observer {
+            Log.e("observer:", nameLive.value)
+        })
+        var genderLive = MutableLiveData<String>()
+        genderLive.value = "女"
+        var ageLive = MutableLiveData<Int>()
+        ageLive.value = 22
+        teacher = Teacher(nameLive, genderLive, ageLive)
         binding.user = user
         binding.student = student
+        binding.teacher = teacher
 
         binding.owner = this
         binding.setClickListener {
@@ -39,8 +57,15 @@ class DataBindingActivity : AppCompatActivity() {
 
     private fun onClickTv(view: View) {
         when (view.id) {
-            R.id.tv_name_student -> {student.name = "newstudent"}
-            R.id.tv_name_user -> {user.userName = "newuser"}
+            R.id.tv_name_student -> {
+                student.name = "newstudent"
+            }
+            R.id.tv_name_user -> {
+                user.userName = "newuser"
+            }
+            R.id.tv_name_teacher -> {
+                teacher.name.value = "Mr Cai"
+            }
         }
     }
 }

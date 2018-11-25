@@ -13,6 +13,10 @@
             type="com.wei.androidtraining.model.Student" />
 
         <variable
+            name="teacher"
+            type="com.wei.androidtraining.model.Teacher" />
+
+        <variable
             name="clickListener"
             type="android.view.View.OnClickListener"/>
 
@@ -41,6 +45,15 @@
             android:layout_centerHorizontal="true"
             android:onClick="@{clickListener}"
             android:text="@{user.userName, default = bbb}" />
+
+        <TextView
+            android:id="@+id/tv_name_teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_user"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{clickListener}"
+            android:text="@{teacher.name}" />
 
         <com.wei.androidtraining.widget.CusTextView
             android:layout_width="wrap_content"
