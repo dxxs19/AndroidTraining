@@ -17,6 +17,10 @@
             type="com.wei.androidtraining.model.Teacher" />
 
         <variable
+            name="oneWay"
+            type="com.wei.androidtraining.model.OneWay" />
+
+        <variable
             name="clickListener"
             type="android.view.View.OnClickListener"/>
 
@@ -54,6 +58,15 @@
             android:layout_centerHorizontal="true"
             android:onClick="@{clickListener}"
             android:text="@{teacher.name}" />
+
+        <TextView
+            android:id="@+id/tv_name_one_way"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name_teacher"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{clickListener}"
+            android:text="@{oneWay.name}" />
 
         <com.wei.androidtraining.widget.CusTextView
             android:layout_width="wrap_content"

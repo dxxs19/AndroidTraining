@@ -1,5 +1,6 @@
 package com.wei.androidtraining.databinding
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Observer
 import android.databinding.DataBindingUtil
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import com.wei.androidtraining.R
+import com.wei.androidtraining.model.OneWay
 import com.wei.androidtraining.model.Student
 import com.wei.androidtraining.model.Teacher
 import com.wei.androidtraining.model.User
@@ -17,6 +19,8 @@ class DataBindingActivity : AppCompatActivity() {
     private lateinit var user: User
     private lateinit var student: Student
     private lateinit var teacher: Teacher
+    private lateinit var oneWay: OneWay
+    val showLiveData = MutableLiveData<Boolean>()
 
     companion object {
         const val color = R.color.colorAccent
@@ -45,9 +49,13 @@ class DataBindingActivity : AppCompatActivity() {
         var ageLive = MutableLiveData<Int>()
         ageLive.value = 22
         teacher = Teacher(nameLive, genderLive, ageLive)
+
+        oneWay = OneWay("单向绑定")
+
         binding.user = user
         binding.student = student
         binding.teacher = teacher
+        binding.oneWay = oneWay
 
         binding.owner = this
         binding.setClickListener {
@@ -65,6 +73,9 @@ class DataBindingActivity : AppCompatActivity() {
             }
             R.id.tv_name_teacher -> {
                 teacher.name.value = "Mr Cai"
+            }
+            R.id.tv_name_one_way -> {
+                oneWay.name = "现在是双向绑定了"
             }
         }
     }
