@@ -21,7 +21,7 @@ object ViewBinding {
 
     @JvmStatic
     @BindingAdapter(TEXT_CONTENT)
-    fun setTextContent(view: ExpandCollapseView, text: Int) {
+    fun setTextContent(view: ExpandCollapseView, text: String) {
         view.setTextContent(text)
     }
 }

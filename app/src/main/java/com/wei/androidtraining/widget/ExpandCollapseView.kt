@@ -35,8 +35,8 @@ class ExpandCollapseView @JvmOverloads constructor(
         initViews()
     }
 
-    fun setTextContent(text: Int) {
-        originalText = resources.getString(text)
+    fun setTextContent(text: String) {
+        originalText = text
         tvContent?.text = originalText
     }
 

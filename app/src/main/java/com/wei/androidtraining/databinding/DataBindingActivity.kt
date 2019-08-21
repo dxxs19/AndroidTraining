@@ -21,10 +21,13 @@ class DataBindingActivity : AppCompatActivity() {
     private lateinit var teacher: Teacher
     private lateinit var oneWay: OneWay
     val showLiveData = MutableLiveData<Boolean>()
+    val content by lazy {
+        resources.getString(R.string.test_content)
+    }
 
     companion object {
         const val color = R.color.colorAccent
-        const val content = R.string.test_content
+//        const val content = R.string.test_content
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
