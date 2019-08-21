@@ -71,7 +71,14 @@
         <com.wei.androidtraining.widget.CusTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            textColor="@{owner.color}"
+            android:textColor="@{owner.color}"
             android:text="@string/app_name"/>
+
+        <com.wei.androidtraining.widget.ExpandCollapseView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text_content="@{owner.content}"
+            android:layout_margin="10dp" />
+
     </RelativeLayout>
 </layout>

@@ -24,6 +24,7 @@ class DataBindingActivity : AppCompatActivity() {
 
     companion object {
         const val color = R.color.colorAccent
+        const val content = R.string.test_content
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

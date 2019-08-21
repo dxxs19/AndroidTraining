@@ -10,7 +10,8 @@ import android.widget.TextView
  */
 object ViewBinding {
 
-    private const val TEXTCOLOR = "textColor"
+    private const val TEXTCOLOR = BINDING_PREFIX + "textColor"
+    private const val TEXT_CONTENT = BINDING_PREFIX + "text_content"
 
     @JvmStatic
     @BindingAdapter(TEXTCOLOR)
@@ -18,4 +19,9 @@ object ViewBinding {
         view.setColor(color)
     }
 
+    @JvmStatic
+    @BindingAdapter(TEXT_CONTENT)
+    fun setTextContent(view: ExpandCollapseView, text: Int) {
+        view.setTextContent(text)
+    }
 }

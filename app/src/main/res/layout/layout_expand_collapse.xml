@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:padding="5dp"
+        android:lineSpacingExtra="5dp"
+        android:background="@color/colorPrimary"
+        tools:text="@string/test_content" />
+
+    <TextView
+        android:id="@+id/tv_expand_collapse"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:text="展开"
+        android:textColor="#3B55E7" />
+
+</RelativeLayout>
